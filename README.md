@@ -1,6 +1,6 @@
 ## React - Semantic-UI project.
 
-This is a React with Semantic-UI and Sass starter project using webpack for task automation.
+This is a React with Semantic-UI starter project using Webpack and Sass.
 
 This project uses: <br/>
 - 1. [React](https://facebook.github.io/react/) 
