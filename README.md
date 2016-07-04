@@ -1,5 +1,5 @@
 ## React - Semantic-UI project.
-
+## WIP 
 This is a React with Semantic-UI starter project using Webpack and Sass.
 
 This project uses: <br/>
