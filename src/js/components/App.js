@@ -36,6 +36,7 @@ export default class Layout extends React.Component {
             .sidebar({
             	dimPage: false,
             	scrollLock: true,
+            	context: $('#sidebarContext'),
                 onVisible: function() {
                     $('.launch i').removeClass('sidebar');
                     $('.launch i').addClass('close red');
@@ -55,44 +56,31 @@ export default class Layout extends React.Component {
   render() {
   	const { location } = this.props;
     return (
-		<div>
-			<div class="wrapper">
-				{/* mobile and tablet navigation */}
-				<MobileNav location={location}/>
+		<div id="sidebarContext">
+			{/* mobile and tablet navigation */}
+			<MobileNav location={location}/>
 
 			{/* sidebar button */}
-				<div class="ui secondary menu sidebar-menu">
-		            <div class="ui icon launch right attached compact button">
-		                <i class="sidebar large icon"></i>
-		            </div>
-		        </div>
+			<div class="ui secondary menu sidebar-menu">
+	            <div class="ui icon launch right attached compact button">
+	                <i class="sidebar large icon"></i>
+	            </div>
+	        </div>
 
-			    {/* push all content when the sidebar is opened */}
-				<div class="pusher">
-					{/* computer navigation */}
-					<Nav location={location} />
+		    {/* push all content when the sidebar is opened */}
+			<div class="pusher">
+				{/* computer navigation */}
+				<Nav location={location} />
 
-					{/* content wrapper */}
-					<div class="ui container">
-						{this.props.children}
-					</div>
-					
-					{/* footer */}
-					<Footer/>
+				{/* content wrapper */}
+				<div class="ui container">
+					{this.props.children}
+				</div>
+				
+				{/* footer */}
+				<Footer/>
 
-
-				</div> 
-
-
-
-			</div>
-			
-			
-			
-	        
-
-			
-
+			</div> 
 
 		</div>
     );
