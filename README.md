@@ -10,7 +10,7 @@ This project uses: <br/>
 
 
 
-### To run execute the following commands in your terminal:
+### To run, execute the following commands in your terminal:
 - `npm install`
 - `npm run dev`
 - Then go to localhost:8080
