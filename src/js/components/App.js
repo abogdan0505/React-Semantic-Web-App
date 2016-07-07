@@ -5,24 +5,13 @@ import $ from 'jquery'
 import jQuery from 'jquery'
 window.jQuery = jQuery
 
+// React Partial Components
 import Nav from "./partials/Nav"
 import MobileNav from "./partials/MobileNav"
 import Footer from "./partials/Footer"
 
 // Semantic-UI Components
-import 'semantic-ui-container/container.css'
-import 'semantic-ui-reset/reset.css'
-import 'semantic-ui-site/site.css'
-import 'semantic-ui-button/button.css'
-import 'semantic-ui-icon/icon.css'
-import 'semantic-ui-menu/menu.css'
-import 'semantic-ui-item/item.css'
-
-import 'semantic-ui-sidebar/sidebar.css'
-$.fn.sidebar = require('semantic-ui-sidebar')
-
-import 'semantic-ui-transition/transition.css'
-$.fn.transition = require('semantic-ui-transition')
+import './imports/semantic-components.js';
 
 
 export default class Layout extends React.Component {
@@ -36,7 +25,6 @@ export default class Layout extends React.Component {
             .sidebar({
             	dimPage: false,
             	scrollLock: true,
-            	context: $('#sidebarContext'),
                 onVisible: function() {
                     $('.launch i').removeClass('sidebar');
                     $('.launch i').addClass('close red');
@@ -56,31 +44,33 @@ export default class Layout extends React.Component {
   render() {
   	const { location } = this.props;
     return (
-		<div id="sidebarContext">
+		<div>
 			{/* mobile and tablet navigation */}
 			<MobileNav location={location}/>
 
 			{/* sidebar button */}
-			<div class="ui secondary menu sidebar-menu">
+			<div class="ui fixed menu sidebar-btn">
 	            <div class="ui icon launch right attached compact button">
 	                <i class="sidebar large icon"></i>
 	            </div>
 	        </div>
 
 		    {/* push all content when the sidebar is opened */}
-			<div class="pusher">
+
 				{/* computer navigation */}
 				<Nav location={location} />
 
 				{/* content wrapper */}
-				<div class="ui container">
-					{this.props.children}
-				</div>
+				<div class="wrapper">
+					<div class="ui container">
+						{this.props.children}
+					</div>
+				</div>	
+				
 				
 				{/* footer */}
 				<Footer/>
 
-			</div> 
 
 		</div>
     );

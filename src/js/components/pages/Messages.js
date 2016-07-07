@@ -1,16 +1,23 @@
 import React from "react"
 
+import Article from '../templates/Article'
+
 export default class Messages extends React.Component {
+
 	render() {
-		const { query } = this.props.location;
-		const { params } = this.props;
-		const { message } = params;
-		const { date, filter } = query;
+		const Articles = [
+			'Article',
+			'Article',
+			'Article',
+		].map((title, i) => <Article key={i} title={title} /> );
+
+
 		return (
 			<div>
-				<h1>Friends ({message})</h1>
-				<p>date: {date}, filter: {filter}</p>
+				{Articles} 
 			</div>
+			
+
 		)
 	}
-}
+};

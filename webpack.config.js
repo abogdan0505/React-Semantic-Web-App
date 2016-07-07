@@ -26,15 +26,18 @@ module.exports = {
       },
       {
         test: /\.sass$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
       },
       {
           test   : /\.woff|\.woff2|\.svg|.eot|\.ttf/,
           loader : 'url?prefix=font/&limit=10000'
       },
       {
-          test: /\.(png|jpg|)$/,
-          loader: 'url-loader?limit=200000'
+          test: /.*\.(gif|png|jpe?g|svg)$/i,
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+          ]
       }
     ]
   },

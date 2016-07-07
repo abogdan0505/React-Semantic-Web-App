@@ -7,28 +7,33 @@ html.ios body
   height: initial !important
 
 
-.ui.container
-	height: 2000px
-
-.sidebar-menu
+.sidebar-btn
 	display: none !important
 
+.wrapper
+	margin: 100px 0
+
+
 footer
+	position: relative
 	width: 100%
 	height: 300px
-	position: relative
 	background-color: skyblue
 
+// mobile only view
+// @media screen and (max-width: 768px)
+
+
+// mobile and tablet only
 @media screen and (max-width: 991px)
+	.wrapper
+		margin: 100px 0
 
 	.secondary.pointing.menu
 		display: none
 
-	.launch
-		position: fixed !important
-		z-index: 99999 !important
-		margin-top: 10px !important
+	.sidebar-btn
 		display: block !important
 
-	.sidebar-menu
-		display: block !important
+
+
