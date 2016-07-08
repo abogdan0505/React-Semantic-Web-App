@@ -10,6 +10,7 @@ import App from "./components/App"
 // import Home from "./components/pages/Home"
 import Home from "./components/pages/Home"
 import Messages from "./components/pages/Messages"
+import Todos from "./components/pages/Todos"
 import Logout from "./components/pages/Logout"
 
 const app = document.getElementById('app');
@@ -18,7 +19,8 @@ ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Home}></IndexRoute>
-			<Route path="messages" name="messages" component={Messages}></Route>
+			<Route path="messages(/:article)" name="messages" component={Messages}></Route>
+			<Route path="todos" name="todos" component={Todos}></Route>
 			<Route path="logout" name="logout" component={Logout}></Route>
 		</Route>
 	</Router>, app);

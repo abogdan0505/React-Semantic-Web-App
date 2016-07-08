@@ -6,22 +6,35 @@ export default class Nav extends Component {
     render() {
 
         const { location } = this.props;
-        const homeClass = location.pathname === "/" ? "active" : "";
-        const messagesClass = location.pathname.match(/^\/message/) ? "active" : "";
-        const logoutClass = location.pathname.match(/^\/logout/) ? "active" : "";
 
         return (
             <div class="ui container">
                 <div class="ui horizontal secondary pointing menu"> 
-
-                    <IndexLink  to="/" class={homeClass + " " + "item" } > Home </IndexLink>
-
-                    <Link to="messages" class={messagesClass + " " + "item" }>
+                    <IndexLink  
+                        to="/" 
+                        class="item"
+                        activeClassName="active" 
+                        onlyActiveOnIndex={true} > 
+                        Home 
+                    </IndexLink>
+                    <Link 
+                        to="messages" 
+                        class="item" 
+                        activeClassName="active">
                         Messages
                     </Link>
-
-                    <div class="right menu">
-                        <Link to="logout" class={logoutClass + " " + "item" }>
+                    <Link 
+                        to="todos" 
+                        class="item" 
+                        activeClassName="active">
+                        Todos
+                    </Link>
+                    <div 
+                        class="right menu">
+                        <Link 
+                            to="logout" 
+                            class="item" 
+                            activeClassName="active">
                             Logout
                         </Link>
                     </div>
