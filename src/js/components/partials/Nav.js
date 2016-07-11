@@ -15,7 +15,7 @@ export default class Nav extends Component {
                         class="item"
                         activeClassName="active" 
                         onlyActiveOnIndex={true} > 
-                        Home 
+                        Home
                     </IndexLink>
                     <Link 
                         to="messages" 
