@@ -16,9 +16,9 @@ module.exports = {
     new ExtractTextPlugin('css/main.[hash].css'),
     new HtmlWebpackPlugin({
       title: 'Semantic-ui-React',
-      template: 'src/index.tpl',
+      template: 'src/index.html',
       filename: 'index.html',
-      // favicon: path.join(__dirname, 'src', 'images', 'favicon.ico')
+      favicon: path.join(__dirname, 'src', 'images', 'favicons', 'favicon.ico')
     }),
   ],
   module: {
@@ -35,7 +35,7 @@ module.exports = {
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style','css', {publicPath: "../"}) },
       { test: /\.sass$/i, loader: ExtractTextPlugin.extract( ['css','sass' ] ) },
       {
-          test: /.*\.(gif|png)$/i,
+          test: /\.(jpg|png|gif)$/i,
           loaders: [
             'file?name=images/[name].[hash].[ext]',
             'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
