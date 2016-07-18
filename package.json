@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && npm run build:webpack",
-    "build:webpack": "NODE_ENV=production node -r babel-register ./node_modules/.bin/webpack --config webpack.config.prod.js",
-    "start": "node -r babel-register ./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
+    "build:webpack": "cross-env NODE_ENV=production && node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.prod.js",
+    "start": "node -r babel-register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

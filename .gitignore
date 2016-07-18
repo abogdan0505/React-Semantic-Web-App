@@ -1,6 +1,7 @@
 .idea
 node_modules
 .sass-cache
+dist
 *.thumb
 
 # Created by https://www.gitignore.io/api/osx,sass
