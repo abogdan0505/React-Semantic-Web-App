@@ -21,7 +21,6 @@ export default class Messages extends React.Component {
 		return (
 			<div>
 
-
 				<div class="ui grid">
 					<div class="row">
 						<h3 class="ui block header">
@@ -34,12 +33,6 @@ export default class Messages extends React.Component {
 					
 					<div class="doubling stackable four column row">
 						{Articles}
-					</div>
-					<div class="doubling stackable four column row">
-					    {Articles}
-					</div>
-					<div class="doubling stackable four column row">
-					    {Articles}
 					</div>
 
 				</div>

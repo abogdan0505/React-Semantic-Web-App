@@ -23,12 +23,12 @@ module.exports = {
 		]
 	},
 	devServer: {
-		watchOptions: {
-			aggregateTimeout: 300,
-			poll: 1000
-		},
-		stats: { colors: true },
-		hot: true,
+		// watchOptions: {
+		// 	aggregateTimeout: 300,
+		// 	poll: 1000
+		// },
+		// stats: { colors: true },
+		// hot: true,
 		port: port
 	}
 }

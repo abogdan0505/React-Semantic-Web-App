@@ -8,6 +8,12 @@ module.exports = {
   entry: [
     "./src/js/client.js"
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json'],
+    alias: {
+      images: path.join(__dirname, 'src/images')
+    }
+  },
   output: {
     path: 'dist',
     filename: "js/client.[hash].js"
@@ -23,21 +29,20 @@ module.exports = {
   ],
   module: {
     loaders: [
-
       { test: /\.jsx?$/, 
         exclude: /(node_modules|bower_components)/, 
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
+          presets: ['react', 'es2015', 'stage-0', 'react-hmre'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         },
         include: path.join(__dirname, 'src/js') },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style','css', {publicPath: "../"}) },
-      { test: /\.sass$/i, loader: ExtractTextPlugin.extract( ['css','sass' ] ) },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap', {publicPath: "../"}) },
+      { test: /\.sass$/i, loader: ExtractTextPlugin.extract( ['css?sourceMap', 'resolve-url', 'sass?sourceMap'], {publicPath: "../"} ) },
       {
           test: /\.(jpg|png|gif)$/i,
           loaders: [
-            'file?name=images/[name].[hash].[ext]',
+            'url-loader?limit=10000&name=images/[name].[hash].[ext]',
             'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
           ]
       },
