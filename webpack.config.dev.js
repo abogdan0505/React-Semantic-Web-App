@@ -1,7 +1,7 @@
 let webpack = require('webpack')
 import baseConfig from './webpack.config.base'
 
-const port = 3001
+const port = 8080
 
 module.exports = {
 	...baseConfig,
